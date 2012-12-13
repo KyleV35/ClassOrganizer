@@ -26,6 +26,9 @@
 		9AD59F801679489A00F3BABF /* ClassOrganizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F7F1679489A00F3BABF /* ClassOrganizerTests.m */; };
 		9AD59F9016794AF900F3BABF /* ClassListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F8E16794AF900F3BABF /* ClassListController.m */; };
 		9AD59F9116794AF900F3BABF /* ClassListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD59F8F16794AF900F3BABF /* ClassListController.xib */; };
+		9AD59F951679817000F3BABF /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F931679817000F3BABF /* ClassViewController.m */; };
+		9AD59F961679817000F3BABF /* ClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD59F941679817000F3BABF /* ClassViewController.xib */; };
+		9AD59F9C16798AD300F3BABF /* Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F9B16798AD300F3BABF /* Class.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,11 @@
 		9AD59F8D16794AF900F3BABF /* ClassListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassListController.h; sourceTree = "<group>"; };
 		9AD59F8E16794AF900F3BABF /* ClassListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassListController.m; sourceTree = "<group>"; };
 		9AD59F8F16794AF900F3BABF /* ClassListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassListController.xib; sourceTree = "<group>"; };
+		9AD59F921679817000F3BABF /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
+		9AD59F931679817000F3BABF /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
+		9AD59F941679817000F3BABF /* ClassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassViewController.xib; sourceTree = "<group>"; };
+		9AD59F9A16798AD300F3BABF /* Class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Class.h; sourceTree = "<group>"; };
+		9AD59F9B16798AD300F3BABF /* Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Class.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,8 @@
 		9AD59F8B1679494700F3BABF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9AD59F9A16798AD300F3BABF /* Class.h */,
+				9AD59F9B16798AD300F3BABF /* Class.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -189,6 +199,9 @@
 				9AD59F8D16794AF900F3BABF /* ClassListController.h */,
 				9AD59F8E16794AF900F3BABF /* ClassListController.m */,
 				9AD59F8F16794AF900F3BABF /* ClassListController.xib */,
+				9AD59F921679817000F3BABF /* ClassViewController.h */,
+				9AD59F931679817000F3BABF /* ClassViewController.m */,
+				9AD59F941679817000F3BABF /* ClassViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 				9AD59F651679489A00F3BABF /* Default@2x.png in Resources */,
 				9AD59F671679489A00F3BABF /* Default-568h@2x.png in Resources */,
 				9AD59F9116794AF900F3BABF /* ClassListController.xib in Resources */,
+				9AD59F961679817000F3BABF /* ClassViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +321,8 @@
 				9AD59F611679489A00F3BABF /* AppDelegate.m in Sources */,
 				9AD59F6A1679489A00F3BABF /* ClassOrganizer.xcdatamodeld in Sources */,
 				9AD59F9016794AF900F3BABF /* ClassListController.m in Sources */,
+				9AD59F951679817000F3BABF /* ClassViewController.m in Sources */,
+				9AD59F9C16798AD300F3BABF /* Class.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

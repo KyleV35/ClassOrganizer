@@ -10,7 +10,6 @@
 
 @interface ClassListController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *ClassListTableView;
-@property (weak, nonatomic) IBOutlet UINavigationBar *NavBar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

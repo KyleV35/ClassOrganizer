@@ -7,6 +7,7 @@
 //
 
 #import "ClassListController.h"
+#import "ClassViewController.h"
 
 @interface ClassListController () {
     NSMutableArray* objects;
@@ -33,6 +34,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Class List";
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Deselects previous selection
+    NSIndexPath* selection = [self.tableView indexPathForSelectedRow];
+	if (selection)
+		[self.tableView deselectRowAtIndexPath:selection animated:YES];
+	[self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,9 +82,18 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString* title = [objects objectAtIndex:indexPath.row];
+    ClassViewController* classVC = [[ClassViewController alloc]initWithClass:title];
+    [self.navigationController pushViewController:classVC animated:YES];
+    
+}
+
 - (IBAction)addButtonPressed:(UIBarButtonItem *)sender {
     [objects addObject:@"New Item"];
-    [self.ClassListTableView reloadData];
+    [self.tableView reloadData];
 }
 
 @end
