@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Kyle Vermeer. All rights reserved.
 //
 
-#import "Class.h"
+#import "COClass.h"
 
 
 @implementation COClass

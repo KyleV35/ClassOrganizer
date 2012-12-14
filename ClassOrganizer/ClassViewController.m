@@ -8,23 +8,22 @@
 
 #import "ClassViewController.h"
 
-@interface ClassViewController ()
+#import "COClass.h"
 
+@interface ClassViewController () {
+    __weak IBOutlet UILabel *_classNameLabel;
+    COClass* _curClass;
+}
+    
 @end
 
 @implementation ClassViewController
 
-- (id)init
+- (id)initWithClass:(COClass *)curClass
 {
     if (self = [super init]) {
-    }
-    return self;
-}
-
-- (id)initWithClass:(NSString*)classTitle
-{
-    if (self = [super init]) {
-        self.title = classTitle;
+        self.title = @"Class";
+        _curClass = curClass;
     }
     return self;
 }
@@ -32,13 +31,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    _classNameLabel.text = _curClass.title;
+    UIBarButtonItem *addSyllabusButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit Syllabus" style:UIBarButtonItemStylePlain target:self action:@selector(editSyllabusButtonPressed:)];
+    self.navigationItem.rightBarButtonItem = addSyllabusButton;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)editSyllabusButtonPressed:(id)sender
+{
+    NSLog(@"Edit Syllabus Button Pressed");
 }
 
 @end

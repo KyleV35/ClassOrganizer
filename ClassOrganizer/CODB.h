@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class COClass;
+
 @interface CODB : NSObject
 
-@property (nonatomic, strong) NSPersistentStoreCoordinator* dataStore;
++ (CODB*)sharedInstance;
+- (COClass*) makeCOClass;
+- (NSArray*) getCOClasses;
+- (void)saveContext;
 
 @end

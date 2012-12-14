@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class COClass;
+
 @interface ClassViewController : UIViewController
 
-- (id)initWithClass:(NSString*)classTitle;
+- (id)initWithClass:(COClass*)curClass;
 
 @end

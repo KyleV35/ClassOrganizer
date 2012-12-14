@@ -8,11 +8,13 @@
 
 #import "ClassListController.h"
 #import "ClassViewController.h"
-#import "COClass.h"
+#import "CODB.h"
 #import "AppDelegate.h"
 
+#import "COClass.h"
+
 @interface ClassListController () {
-    NSMutableArray* objects;
+    NSMutableArray* _classes;
 }
 
 @end
@@ -22,13 +24,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        objects = [[NSMutableArray alloc] init];
-        NSString* stringA = @"Cat";
-        NSString* stringB = @"Dog";
-        NSString* stringC = @"Person";
-        [objects addObject:stringA];
-        [objects addObject:stringB];
-        [objects addObject:stringC];
+        _classes = [[[CODB sharedInstance] getCOClasses] mutableCopy];
     }
     return self;
 }
@@ -56,7 +52,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-// TableViewDataSource
+# pragma mark TableViewDataSource
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -64,10 +61,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [objects count];
+    return [_classes count];
 }
 
-// TableViewDelegate
+#pragma mark TableViewDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -80,17 +77,16 @@
     
     NSInteger index = indexPath.row;
     
-    // Configure the cell...
-    cell.textLabel.text = [objects objectAtIndex:index];
+    COClass* class= [_classes objectAtIndex:index];
+    cell.textLabel.text = class.title;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSString* title = [objects objectAtIndex:indexPath.row];
-    ClassViewController* classVC = [[ClassViewController alloc]initWithClass:title];
+    COClass *class= [_classes objectAtIndex:indexPath.row];
+    ClassViewController* classVC = [[ClassViewController alloc]initWithClass:class];
     [self.navigationController pushViewController:classVC animated:YES];
     
 }
@@ -101,21 +97,24 @@
     [nameInputAlert show];
 }
 
+#pragma mark UIAlertViewDelegate
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex ==1) {
         NSString* classTitle= [alertView textFieldAtIndex:0].text;
-        addClass(classTitle);
+        [self addClass:classTitle];
     }
 }
 
+#pragma mark Helper Functions
+
 - (void) addClass:(NSString*)title
 {
-    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext* context = appDelegate.managedObjectContext;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"COClass" inManagedObjectContext:context];
-    COClass* class = [[COClass alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
-    
+    COClass* class= [[CODB sharedInstance] makeCOClass];
+    class.title= title;
+    [[CODB sharedInstance] saveContext];
+    [self.tableView reloadData];
 }
 
 @end
