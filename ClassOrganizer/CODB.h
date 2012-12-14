@@ -11,6 +11,7 @@
 
 @class COClass;
 @class COSyllabus;
+@class COGradeCriteria;
 
 @interface CODB : NSObject
 
@@ -21,5 +22,7 @@
 - (NSArray*) getCOClasses;
 
 - (COSyllabus*) makeCOSyllabus;
+
+- (COGradeCriteria*) makeCOGradeCriteria;
 
 @end

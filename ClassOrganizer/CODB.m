@@ -11,6 +11,7 @@
 
 #import "COClass.h"
 #import "COSyllabus.h"
+#import "COGradeCriteria.h"
 
 @implementation CODB {
     NSManagedObjectContext* _moc;
@@ -61,6 +62,13 @@ static CODB* _sharedInstance;
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"COSyllabus" inManagedObjectContext:_moc];
     COSyllabus* syllabus = [[COSyllabus alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_moc];
     return syllabus;
+}
+
+- (COGradeCriteria*)makeCOGradeCriteria
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"COGradeCriteria" inManagedObjectContext:_moc];
+    COGradeCriteria* gradeCriteria = [[COGradeCriteria alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_moc];
+    return gradeCriteria;
 }
 
 - (void)saveContext

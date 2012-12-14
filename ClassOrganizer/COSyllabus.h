@@ -10,9 +10,14 @@
 #import <CoreData/CoreData.h>
 
 @class COClass;
+@class COGradeCriteria;
 
 @interface COSyllabus : NSManagedObject
 
 @property (nonatomic, retain) COClass *curClass;
+@property (nonatomic, retain) NSSet* gradeCriteria;
+
+- (void)addGradeCriteriaObject:(COGradeCriteria *)object;
+- (void)removeGradeCriteriaObject:(COGradeCriteria *)object;
 
 @end
