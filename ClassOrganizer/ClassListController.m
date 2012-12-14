@@ -8,6 +8,8 @@
 
 #import "ClassListController.h"
 #import "ClassViewController.h"
+#import "COClass.h"
+#import "AppDelegate.h"
 
 @interface ClassListController () {
     NSMutableArray* objects;
@@ -94,8 +96,26 @@
 }
 
 - (IBAction)addButtonPressed:(UIBarButtonItem *)sender {
-    [objects addObject:@"New Item"];
-    [self.tableView reloadData];
+    UIAlertView* nameInputAlert = [[UIAlertView alloc] initWithTitle:@"Add New Class" message:@"Name of new class:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create", nil];
+    nameInputAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [nameInputAlert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex ==1) {
+        NSString* classTitle= [alertView textFieldAtIndex:0].text;
+        addClass(classTitle);
+    }
+}
+
+- (void) addClass:(NSString*)title
+{
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext* context = appDelegate.managedObjectContext;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"COClass" inManagedObjectContext:context];
+    COClass* class = [[COClass alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
+    
 }
 
 @end

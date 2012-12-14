@@ -28,7 +28,8 @@
 		9AD59F9116794AF900F3BABF /* ClassListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD59F8F16794AF900F3BABF /* ClassListController.xib */; };
 		9AD59F951679817000F3BABF /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F931679817000F3BABF /* ClassViewController.m */; };
 		9AD59F961679817000F3BABF /* ClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD59F941679817000F3BABF /* ClassViewController.xib */; };
-		9AD59F9C16798AD300F3BABF /* Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F9B16798AD300F3BABF /* Class.m */; };
+		9AD59F9C16798AD300F3BABF /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F9B16798AD300F3BABF /* COClass.m */; };
+		9AD59F9F167AAD6700F3BABF /* CODB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F9E167AAD6700F3BABF /* CODB.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +70,10 @@
 		9AD59F921679817000F3BABF /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
 		9AD59F931679817000F3BABF /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
 		9AD59F941679817000F3BABF /* ClassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassViewController.xib; sourceTree = "<group>"; };
-		9AD59F9A16798AD300F3BABF /* Class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Class.h; sourceTree = "<group>"; };
-		9AD59F9B16798AD300F3BABF /* Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Class.m; sourceTree = "<group>"; };
+		9AD59F9A16798AD300F3BABF /* COClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COClass.h; sourceTree = "<group>"; };
+		9AD59F9B16798AD300F3BABF /* COClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COClass.m; sourceTree = "<group>"; };
+		9AD59F9D167AAD6700F3BABF /* CODB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODB.h; sourceTree = "<group>"; };
+		9AD59F9E167AAD6700F3BABF /* CODB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODB.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				9AD59F891679492F00F3BABF /* Views */,
 				9AD59F681679489A00F3BABF /* ClassOrganizer.xcdatamodeld */,
 				9AD59F571679489A00F3BABF /* Supporting Files */,
+				9AD59F9D167AAD6700F3BABF /* CODB.h */,
+				9AD59F9E167AAD6700F3BABF /* CODB.m */,
 			);
 			path = ClassOrganizer;
 			sourceTree = "<group>";
@@ -187,8 +192,8 @@
 		9AD59F8B1679494700F3BABF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9AD59F9A16798AD300F3BABF /* Class.h */,
-				9AD59F9B16798AD300F3BABF /* Class.m */,
+				9AD59F9A16798AD300F3BABF /* COClass.h */,
+				9AD59F9B16798AD300F3BABF /* COClass.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -322,7 +327,8 @@
 				9AD59F6A1679489A00F3BABF /* ClassOrganizer.xcdatamodeld in Sources */,
 				9AD59F9016794AF900F3BABF /* ClassListController.m in Sources */,
 				9AD59F951679817000F3BABF /* ClassViewController.m in Sources */,
-				9AD59F9C16798AD300F3BABF /* Class.m in Sources */,
+				9AD59F9C16798AD300F3BABF /* COClass.m in Sources */,
+				9AD59F9F167AAD6700F3BABF /* CODB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
