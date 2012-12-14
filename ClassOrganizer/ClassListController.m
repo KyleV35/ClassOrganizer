@@ -21,6 +21,8 @@
 
 @implementation ClassListController
 
+@synthesize tableView = _tableView;
+
 - (id)init
 {
     if (self = [super init]) {
@@ -33,7 +35,7 @@
 {
     [super viewDidLoad];
     self.title = @"Class List";
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
@@ -91,12 +93,6 @@
     
 }
 
-- (IBAction)addButtonPressed:(UIBarButtonItem *)sender {
-    UIAlertView* nameInputAlert = [[UIAlertView alloc] initWithTitle:@"Add New Class" message:@"Name of new class:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create", nil];
-    nameInputAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [nameInputAlert show];
-}
-
 #pragma mark UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -111,10 +107,16 @@
 
 - (void) addClass:(NSString*)title
 {
-    COClass* class= [[CODB sharedInstance] makeCOClass];
-    class.title= title;
+    COClass* class= [COClass createNewClassWithTitle:title];
     [[CODB sharedInstance] saveContext];
+    [_classes addObject:class];
     [self.tableView reloadData];
+}
+
+- (void)addButtonPressed {
+    UIAlertView* nameInputAlert = [[UIAlertView alloc] initWithTitle:@"Add New Class" message:@"Name of new class:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create", nil];
+    nameInputAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [nameInputAlert show];
 }
 
 @end

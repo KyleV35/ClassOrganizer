@@ -10,7 +10,7 @@
 
 @class COClass;
 
-@interface ClassViewController : UIViewController
+@interface ClassViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 - (id)initWithClass:(COClass*)curClass;
 

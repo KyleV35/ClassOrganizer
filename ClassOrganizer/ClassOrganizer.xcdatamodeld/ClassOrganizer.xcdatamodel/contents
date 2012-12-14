@@ -2,8 +2,13 @@
 <model name="" userDefinedModelVersionIdentifier="Class" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11G63b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="COClass" representedClassName="NSManagedObject" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="syllabus" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="COSyllabus" inverseName="curClass" inverseEntity="COSyllabus" syncable="YES"/>
+    </entity>
+    <entity name="COSyllabus" representedClassName="COSyllabus" syncable="YES">
+        <relationship name="curClass" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="COClass" inverseName="syllabus" inverseEntity="COClass" syncable="YES"/>
     </entity>
     <elements>
-        <element name="COClass" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="COClass" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="COSyllabus" positionX="160" positionY="192" width="128" height="60"/>
     </elements>
 </model>

@@ -10,12 +10,16 @@
 #import <CoreData/CoreData.h>
 
 @class COClass;
+@class COSyllabus;
 
 @interface CODB : NSObject
 
 + (CODB*)sharedInstance;
+- (void)saveContext;
+
 - (COClass*) makeCOClass;
 - (NSArray*) getCOClasses;
-- (void)saveContext;
+
+- (COSyllabus*) makeCOSyllabus;
 
 @end

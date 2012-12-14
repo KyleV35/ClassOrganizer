@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 
 #import "COClass.h"
+#import "COSyllabus.h"
 
 @implementation CODB {
     NSManagedObjectContext* _moc;
@@ -53,6 +54,13 @@ static CODB* _sharedInstance;
     NSError* error;
     NSArray *array = [_moc executeFetchRequest:request error:&error];
     return array;
+}
+
+- (COSyllabus*)makeCOSyllabus
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"COSyllabus" inManagedObjectContext:_moc];
+    COSyllabus* syllabus = [[COSyllabus alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_moc];
+    return syllabus;
 }
 
 - (void)saveContext

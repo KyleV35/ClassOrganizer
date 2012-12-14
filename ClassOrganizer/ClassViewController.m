@@ -11,8 +11,11 @@
 #import "COClass.h"
 
 @interface ClassViewController () {
-    __weak IBOutlet UILabel *_classNameLabel;
-    COClass* _curClass;
+    __weak IBOutlet UILabel *classNameLabel;
+    COClass* curClass_;
+    __weak IBOutlet UILabel *gradeLetterLabel;
+    __weak IBOutlet UILabel *gradePercentLabel;
+    __weak IBOutlet UITableView *syllabusTable;
 }
     
 @end
@@ -23,7 +26,7 @@
 {
     if (self = [super init]) {
         self.title = @"Class";
-        _curClass = curClass;
+        curClass_ = curClass;
     }
     return self;
 }
@@ -31,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _classNameLabel.text = _curClass.title;
+    classNameLabel.text = curClass_.title;
     UIBarButtonItem *addSyllabusButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit Syllabus" style:UIBarButtonItemStylePlain target:self action:@selector(editSyllabusButtonPressed:)];
     self.navigationItem.rightBarButtonItem = addSyllabusButton;
 }
@@ -41,6 +44,40 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+# pragma mark TableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+#pragma mark TableViewDelegate
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    NSInteger index = indexPath.row;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+}
+
+#pragma mark Helper Functions
 
 - (IBAction)editSyllabusButtonPressed:(id)sender
 {

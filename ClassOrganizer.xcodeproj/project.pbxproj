@@ -30,6 +30,7 @@
 		9AD59F961679817000F3BABF /* ClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD59F941679817000F3BABF /* ClassViewController.xib */; };
 		9AD59F9C16798AD300F3BABF /* COClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F9B16798AD300F3BABF /* COClass.m */; };
 		9AD59F9F167AAD6700F3BABF /* CODB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F9E167AAD6700F3BABF /* CODB.m */; };
+		9AD59FA2167BC34200F3BABF /* COSyllabus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59FA1167BC34200F3BABF /* COSyllabus.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		9AD59F9B16798AD300F3BABF /* COClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COClass.m; sourceTree = "<group>"; };
 		9AD59F9D167AAD6700F3BABF /* CODB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CODB.h; sourceTree = "<group>"; };
 		9AD59F9E167AAD6700F3BABF /* CODB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CODB.m; sourceTree = "<group>"; };
+		9AD59FA0167BC34200F3BABF /* COSyllabus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSyllabus.h; sourceTree = "<group>"; };
+		9AD59FA1167BC34200F3BABF /* COSyllabus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSyllabus.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 			children = (
 				9AD59F9A16798AD300F3BABF /* COClass.h */,
 				9AD59F9B16798AD300F3BABF /* COClass.m */,
+				9AD59FA0167BC34200F3BABF /* COSyllabus.h */,
+				9AD59FA1167BC34200F3BABF /* COSyllabus.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				9AD59F951679817000F3BABF /* ClassViewController.m in Sources */,
 				9AD59F9C16798AD300F3BABF /* COClass.m in Sources */,
 				9AD59F9F167AAD6700F3BABF /* CODB.m in Sources */,
+				9AD59FA2167BC34200F3BABF /* COSyllabus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
