@@ -32,6 +32,10 @@
 		9AD59F9F167AAD6700F3BABF /* CODB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59F9E167AAD6700F3BABF /* CODB.m */; };
 		9AD59FA2167BC34200F3BABF /* COSyllabus.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59FA1167BC34200F3BABF /* COSyllabus.m */; };
 		9AD59FA5167BE3ED00F3BABF /* COGradeCriteria.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59FA4167BE3EC00F3BABF /* COGradeCriteria.m */; };
+		9AD59FA9167F18BF00F3BABF /* COSyllabusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59FA7167F18BF00F3BABF /* COSyllabusViewController.m */; };
+		9AD59FAA167F18BF00F3BABF /* COSyllabusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD59FA8167F18BF00F3BABF /* COSyllabusViewController.xib */; };
+		9AD59FAE167F1E9D00F3BABF /* GradingCategoryEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD59FAD167F1E9D00F3BABF /* GradingCategoryEditorView.xib */; };
+		9AD59FB1167F1F7F00F3BABF /* GradingCriteriaEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD59FB0167F1F7F00F3BABF /* GradingCriteriaEditorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,12 @@
 		9AD59FA1167BC34200F3BABF /* COSyllabus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSyllabus.m; sourceTree = "<group>"; };
 		9AD59FA3167BE3EC00F3BABF /* COGradeCriteria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGradeCriteria.h; sourceTree = "<group>"; };
 		9AD59FA4167BE3EC00F3BABF /* COGradeCriteria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COGradeCriteria.m; sourceTree = "<group>"; };
+		9AD59FA6167F18BF00F3BABF /* COSyllabusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSyllabusViewController.h; sourceTree = "<group>"; };
+		9AD59FA7167F18BF00F3BABF /* COSyllabusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSyllabusViewController.m; sourceTree = "<group>"; };
+		9AD59FA8167F18BF00F3BABF /* COSyllabusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COSyllabusViewController.xib; sourceTree = "<group>"; };
+		9AD59FAD167F1E9D00F3BABF /* GradingCategoryEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradingCategoryEditorView.xib; sourceTree = "<group>"; };
+		9AD59FAF167F1F7F00F3BABF /* GradingCriteriaEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradingCriteriaEditorView.h; sourceTree = "<group>"; };
+		9AD59FB0167F1F7F00F3BABF /* GradingCriteriaEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradingCriteriaEditorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +201,9 @@
 		9AD59F891679492F00F3BABF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9AD59FAD167F1E9D00F3BABF /* GradingCategoryEditorView.xib */,
+				9AD59FAF167F1F7F00F3BABF /* GradingCriteriaEditorView.h */,
+				9AD59FB0167F1F7F00F3BABF /* GradingCriteriaEditorView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -217,6 +230,9 @@
 				9AD59F921679817000F3BABF /* ClassViewController.h */,
 				9AD59F931679817000F3BABF /* ClassViewController.m */,
 				9AD59F941679817000F3BABF /* ClassViewController.xib */,
+				9AD59FA6167F18BF00F3BABF /* COSyllabusViewController.h */,
+				9AD59FA7167F18BF00F3BABF /* COSyllabusViewController.m */,
+				9AD59FA8167F18BF00F3BABF /* COSyllabusViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -298,6 +314,8 @@
 				9AD59F671679489A00F3BABF /* Default-568h@2x.png in Resources */,
 				9AD59F9116794AF900F3BABF /* ClassListController.xib in Resources */,
 				9AD59F961679817000F3BABF /* ClassViewController.xib in Resources */,
+				9AD59FAA167F18BF00F3BABF /* COSyllabusViewController.xib in Resources */,
+				9AD59FAE167F1E9D00F3BABF /* GradingCategoryEditorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +359,8 @@
 				9AD59F9F167AAD6700F3BABF /* CODB.m in Sources */,
 				9AD59FA2167BC34200F3BABF /* COSyllabus.m in Sources */,
 				9AD59FA5167BE3ED00F3BABF /* COGradeCriteria.m in Sources */,
+				9AD59FA9167F18BF00F3BABF /* COSyllabusViewController.m in Sources */,
+				9AD59FB1167F1F7F00F3BABF /* GradingCriteriaEditorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

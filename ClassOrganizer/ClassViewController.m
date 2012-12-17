@@ -9,6 +9,9 @@
 #import "ClassViewController.h"
 
 #import "COClass.h"
+#import "COSyllabus.h"
+
+#import "COSyllabusViewController.h"
 
 @interface ClassViewController () {
     __weak IBOutlet UILabel *classNameLabel;
@@ -16,6 +19,7 @@
     __weak IBOutlet UILabel *gradeLetterLabel;
     __weak IBOutlet UILabel *gradePercentLabel;
     __weak IBOutlet UITableView *syllabusTable;
+    NSArray* _gradeCriteria;
 }
     
 @end
@@ -27,6 +31,8 @@
     if (self = [super init]) {
         self.title = @"Class";
         curClass_ = curClass;
+        _gradeCriteria = [curClass_.syllabus.gradeCriteria allObjects];
+        NSLog(@"Grade Criteria Count: %d",[_gradeCriteria count]);
     }
     return self;
 }
@@ -54,7 +60,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [_gradeCriteria count];
 }
 
 #pragma mark TableViewDelegate
@@ -70,6 +76,8 @@
     
     NSInteger index = indexPath.row;
     
+    cell.textLabel.text = [[_gradeCriteria objectAtIndex:index] key];
+    
     return cell;
 }
 
@@ -77,11 +85,12 @@
 {
 }
 
-#pragma mark Helper Functions
+#pragma mark Button Functions
 
 - (IBAction)editSyllabusButtonPressed:(id)sender
 {
-    NSLog(@"Edit Syllabus Button Pressed");
+    COSyllabusViewController* viewController = [[COSyllabusViewController alloc] initWithSyllabus:curClass_.syllabus];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

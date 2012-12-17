@@ -20,4 +20,7 @@
 - (void)addGradeCriteriaObject:(COGradeCriteria *)object;
 - (void)removeGradeCriteriaObject:(COGradeCriteria *)object;
 
++(id)createCOSyllabusWithClass:(COClass*)class;
+-(void)addGradeCriteriaWithKey:(NSString*)key PercentWeight:(double)weight;
+
 @end

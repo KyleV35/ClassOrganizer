@@ -9,6 +9,7 @@
 #import "COClass.h"
 #import "CODB.h"
 #import "COSyllabus.h"
+#import "COGradeCriteria.h"
 
 
 @implementation COClass
@@ -19,9 +20,8 @@
 + (id)createNewClassWithTitle:(NSString *)title
 {
     COClass* class= [[CODB sharedInstance] makeCOClass];
-    COSyllabus * syllabus = [[CODB sharedInstance] makeCOSyllabus];
-    class.syllabus= syllabus;
-    syllabus.curClass = class;
+    class.syllabus= [COSyllabus createCOSyllabusWithClass:class];
+    [class.syllabus addGradeCriteriaWithKey:@"Tests" PercentWeight:100.0];
     class.title= title;
     return class;
 }

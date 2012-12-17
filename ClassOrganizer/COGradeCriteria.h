@@ -17,4 +17,6 @@
 @property (nonatomic, retain) NSDecimalNumber * percentWeight;
 @property (nonatomic, retain) COSyllabus *syllabus;
 
++(id)createCOGradeCriteriaWithKey:(NSString*)key PercentWeight:(double)weight;
+
 @end
